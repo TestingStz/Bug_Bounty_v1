@@ -2,7 +2,7 @@
 name: 'Bug report '
 about: Create a report for the bug bounty
 title: ''
-labels: Dont forget your label
+labels: DON'T FORGET YOUR LABEL
 assignees: ''
 
 ---
