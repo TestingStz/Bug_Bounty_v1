@@ -2,7 +2,7 @@
 name: 'Bug report '
 about: Create a report to help us improve
 title: ''
-labels: '[Chain, Evm-module, Swisstronik.js, Node Setup, Front-end, Back-end, Wallet-core]'
+labels: '["Chain", "Evm-module", "Swisstronik.js", "Node Setup", "Front-end", "Back-end", "Wallet-core"]'
 assignees: ''
 
 ---
