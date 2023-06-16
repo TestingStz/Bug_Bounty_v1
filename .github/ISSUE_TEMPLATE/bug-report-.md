@@ -27,7 +27,7 @@ Optionally, include a point for submitting a code fix for the identified vulnera
 ### 6. **Choose the right label** 
 Choose the suitable tag or label that precisely represents the nature of the issue being resolved, indicating its specific category, such as "blockchain core" or "Intel SGX. & Encryption"
 
-7. **Additional context** 
+### 7. **Additional context** 
 Sharing relevant context to facilitate problem-solving and comprehensive understanding.
 
 # Example bug report
