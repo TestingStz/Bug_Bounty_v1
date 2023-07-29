@@ -13,7 +13,7 @@ jobs:
 
       - name: Create Issue in Main Repo
         env:
-          MAIN_REPO_TOKEN: ${{ secrets.MAIN_REPO_TOKEN }}
+          MAIN_REPO_TOKEN: ${{ secrets.ISSUES_BB }}
           MAIN_REPO: TestingStz/Bug_Bounty_v1
         run: |
           TITLE=$(jq -r '.issue.title' $GITHUB_EVENT_PATH)
