@@ -18,9 +18,9 @@ jobs:
         run: |
           TITLE=$(jq -r '.issue.title' $GITHUB_EVENT_PATH)
           BODY=$(jq -r '.issue.body' $GITHUB_EVENT_PATH)
-          curl -X POST -H "Authorization: token $MAIN_REPO_TOKEN" \
+          curl -X POST -H "Authorization: token $Bug_Bounty_v1_TOKEN" \
           -d "{\"title\":\"[External Issue] $TITLE\",\"body\":\"$BODY\"}" \
-          "https://api.github.com/repos/$MAIN_REPO/issues"
+          "https://api.github.com/repos/$Bug_Bounty_v1/issues"
 
 
 
