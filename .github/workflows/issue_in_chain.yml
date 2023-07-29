@@ -15,8 +15,6 @@ jobs:
         env:
           MAIN_REPO_TOKEN: ${{ secrets.MAIN_REPO_TOKEN }}
           MAIN_REPO: REPLACE_WITH_YOUR_ORGANIZATION/REPLACE_WITH_YOUR_MAIN_REPO
-          # Replace 'REPLACE_WITH_YOUR_ORGANIZATION' with the actual name of your organization or username,
-          # and 'REPLACE_WITH_YOUR_MAIN_REPO' with the actual name of your main repository
         run: |
           TITLE=$(jq -r '.issue.title' $GITHUB_EVENT_PATH)
           BODY=$(jq -r '.issue.body' $GITHUB_EVENT_PATH)
