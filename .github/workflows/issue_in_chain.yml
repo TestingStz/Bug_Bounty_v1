@@ -1,0 +1,28 @@
+name: Create Issue in Chain
+on:
+  issues:
+    types: [opened]
+  repository_dispatch:
+    types: [create_issue_in_chain_repo]
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Issue in Main Repo
+        env:
+          MAIN_REPO_TOKEN: ${{ secrets.MAIN_REPO_TOKEN }}
+          MAIN_REPO: REPLACE_WITH_YOUR_ORGANIZATION/REPLACE_WITH_YOUR_MAIN_REPO
+          # Replace 'REPLACE_WITH_YOUR_ORGANIZATION' with the actual name of your organization or username,
+          # and 'REPLACE_WITH_YOUR_MAIN_REPO' with the actual name of your main repository
+        run: |
+          TITLE=$(jq -r '.issue.title' $GITHUB_EVENT_PATH)
+          BODY=$(jq -r '.issue.body' $GITHUB_EVENT_PATH)
+          curl -X POST -H "Authorization: token $MAIN_REPO_TOKEN" \
+          -d "{\"title\":\"[External Issue] $TITLE\",\"body\":\"$BODY\"}" \
+          "https://api.github.com/repos/$MAIN_REPO/issues"
+
+
+
